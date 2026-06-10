@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.cache/
+.pytest_cache/
+.mypy_cache/
+.gradio/
+
+# Runtime and generated artifacts
+data/
+artifacts/
+demo_test_images/
+release/
+reports/generated/
+tmp/
+
+# Local app state
+*.log
+gradio_cached_examples/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
