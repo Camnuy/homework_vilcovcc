@@ -1,0 +1,11 @@
+image_path,image_name,label,split,prediction,confidence
+data/style_dataset/images/minimal/minimal_generated_07.png,minimal_generated_07.png,minimal,test,minimal,0.43128762
+data/style_dataset/images/industrial/industrial_07_8feaea08c7.png,industrial_07_8feaea08c7.png,industrial,test,minimal,0.37189284
+data/style_dataset/images/organic/organic_generated_07.png,organic_generated_07.png,organic,test,organic,0.43841496
+data/style_dataset/images/organic/organic_03_c3455e0091.jpg,organic_03_c3455e0091.jpg,organic,test,organic,0.37966806
+data/style_dataset/images/neoclassical/0030_the_metropolitan_museum_of_art_436709.jpg,0030_the_metropolitan_museum_of_art_436709.jpg,neoclassical,test,neoclassical,0.6304978
+data/style_dataset/images/neoclassical/0006_the_metropolitan_museum_of_art_436107.jpg,0006_the_metropolitan_museum_of_art_436107.jpg,neoclassical,test,neoclassical,0.520532
+data/style_dataset/images/industrial/industrial_04_a91f54cd71.jpg,industrial_04_a91f54cd71.jpg,industrial,test,industrial,0.4939403
+data/style_dataset/images/minimal/minimal_03_44b54fc5c8.jpg,minimal_03_44b54fc5c8.jpg,minimal,test,industrial,0.42083582
+data/style_dataset/images/neoclassical/0018_art_institute_of_chicago_88632.jpg,0018_art_institute_of_chicago_88632.jpg,neoclassical,test,neoclassical,0.475772
+data/style_dataset/images/neoclassical/0002_the_metropolitan_museum_of_art_436106.jpg,0002_the_metropolitan_museum_of_art_436106.jpg,neoclassical,test,neoclassical,0.549501
