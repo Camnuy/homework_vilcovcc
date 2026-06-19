@@ -2,7 +2,7 @@
 
 Weblog link: [weblog.md](weblog.md)
 
-Link to video: https://pan.baidu.com/s/17s2qRc2f4mNe_wOoHjXtPg?pwd=huh2
+Link to video: https://pan.baidu.com/s/1AakJOzXS0300A2urh5o9Hg?pwd=9tvx
 
 ## Introduction
 
@@ -78,6 +78,25 @@ I think the project works best when understood as a classification experiment an
 The strongest part of the final version is its coherence. The dataset, model choice, evaluation method, and interface all support the same core question about computational style judgement. The weakest part is the size and scope of the dataset. With only thirty-five images, the system is inevitably shaped by curation decisions and cannot claim broad coverage.
 
 If I continued the project, I would expand the dataset, improve the provenance records, collect more examples near category boundaries, and experiment with a small preference or reward layer for ranking reference matches more intelligently. Even in its current form, though, I think the project succeeds as a final assignment because it combines a working machine-learning artifact with a clear space for critical reflection.
+
+## Course Alignment
+
+This project directly addresses several of the core machine learning topics listed in the assignment brief.
+
+1. **Selecting and preparing data for machine learning**  
+   I defined four visual style categories, collected a curated local image set, and prepared train, validation, and test splits for the classification workflow.
+
+2. **Comparing, choosing, and configuring machine learning methods**  
+   I selected CLIP as the pretrained image representation model and chose a lightweight Logistic Regression classifier on top of the embeddings because that combination fit the scale and aims of the project.
+
+3. **Training and refining a machine learning model**  
+   I trained a classifier on the CLIP embeddings and refined the workflow by revising the dataset, adjusting the category definitions, and improving the final interface for demonstration.
+
+4. **Evaluation of a machine learning model or system**  
+   I evaluated the system with a held-out test split, measured accuracy, reviewed confidence scores, and analysed the confusion matrix to examine where the classifier succeeded and where it became ambiguous.
+
+5. **Critical exploration of creative, aesthetic, ethical, and cultural questions**  
+   The project explicitly treats style labels as subjective and interpretive rather than objective truths, and it reflects on how machine learning can simplify, distort, or stabilise aesthetic judgement in a creative context.
 
 ## Repository Structure and Instructions for Running
 
