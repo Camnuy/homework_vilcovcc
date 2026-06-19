@@ -2,7 +2,7 @@
 
 Weblog link: [weblog.md](weblog.md)
 
-Link to video: to be added after recording
+Link to video: https://pan.baidu.com/s/17s2qRc2f4mNe_wOoHjXtPg?pwd=huh2
 
 ## Introduction
 
