@@ -1,8 +1,8 @@
 # Release Notes
 
-版本：`v0.1`
+版本：`v0.2`
 
-发布日期：`2026-06-10`
+发布日期：`2026-06-19`
 
 ## 本次包含内容
 
@@ -10,25 +10,26 @@
 2. 数据准备脚本
 3. 训练脚本
 4. 评估脚本
-5. Gradio demo 初版
+5. 本地桌面 demo
 6. confusion matrix 和评估摘要
-7. 项目 README 和 weblog 草稿
+7. README、weblog 与视频辅助文档
 
 ## 当前数据情况
 
 - 风格类别：`neoclassical / industrial / organic / minimal`
-- 图像总数：`50`
+- 图像总数：`35`
 
 ## 当前可演示功能
 
-1. Upload image
-2. Predict style label
-3. Show confidence scores
-4. Review starter evaluation results
+1. 选择本地图片
+2. 预测风格标签
+3. 展示各类别置信度
+4. 展示相近参考图
+5. 查看评估结果与 confusion matrix
 
 ## 当前状态
 
-这是一个**可运行初版**，已经具备训练、评估和演示三个基本环节。
+这是一个可运行的课程项目初版，已经具备训练、评估和本地演示三个基本环节。
 
 ## 下一步建议
 

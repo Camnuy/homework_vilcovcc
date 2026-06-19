@@ -29,26 +29,33 @@ STYLE_DESCRIPTIONS = {
 }
 
 WIKIMEDIA_QUERIES = {
+    "neoclassical": [
+        "\"Jacques-Louis David\" painting",
+        "\"Jean-Auguste-Dominique Ingres\" portrait",
+        "\"Angelica Kauffman\" painting",
+        "\"Antonio Canova\" sculpture",
+        "\"neoclassical art\" painting",
+    ],
     "industrial": [
-        "factory",
-        "industrial architecture",
-        "machine",
-        "steel bridge",
-        "warehouse interior",
+        "factory machinery",
+        "industrial interior",
+        "steel structure",
+        "power plant interior",
+        "shipyard crane",
     ],
     "organic": [
         "botanical illustration",
-        "leaf",
-        "plant illustration",
-        "flower close up",
-        "vine pattern",
+        "leaf macro",
+        "flower macro",
+        "vine ornament",
+        "floral pattern",
     ],
     "minimal": [
-        "minimalist architecture",
-        "minimalism art",
-        "geometric abstraction",
-        "white interior",
-        "modern facade",
+        "\"Kazimir Malevich\" black square",
+        "\"Kazimir Malevich\" suprematism",
+        "\"Ilya Chashnik\" suprematism",
+        "\"El Lissitzky\" proun",
+        "\"Donald Judd\" sculpture",
     ],
 }
 

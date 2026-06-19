@@ -19,6 +19,32 @@ SESSION.headers.update(
     }
 )
 
+SKIP_TITLE_KEYWORDS = {
+    "svg",
+    "diagram",
+    "pangram",
+    "ambigram",
+    "alphabet",
+    "typography",
+    "font",
+    "logo",
+    "icon",
+    "map",
+    "cell",
+}
+
+LABEL_SKIP_KEYWORDS = {
+    "industrial": {"school", "educativa"},
+    "minimal": {"tanga", "ogg", "clock tower", "straw", "hartriegel", "park"},
+}
+
+
+def should_skip_page(label: str, title: str) -> bool:
+    title_lower = title.lower()
+    if any(keyword in title_lower for keyword in SKIP_TITLE_KEYWORDS):
+        return True
+    return any(keyword in title_lower for keyword in LABEL_SKIP_KEYWORDS.get(label, set()))
+
 
 def extension_from_url(url: str) -> str:
     suffix = Path(urlparse(url).path).suffix.lower()
@@ -64,6 +90,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Download a small public-domain / open-license starter dataset from Wikimedia Commons.")
     parser.add_argument("--per-query", type=int, default=10, help="How many search results to request per query.")
     parser.add_argument("--per-label", type=int, default=12, help="Maximum number of images to keep per label.")
+    parser.add_argument("--max-per-query", type=int, default=2, help="Maximum number of accepted images per query, to improve diversity.")
     args = parser.parse_args()
 
     IMAGE_ROOT.mkdir(parents=True, exist_ok=True)
@@ -77,17 +104,22 @@ def main() -> None:
         for query in queries:
             if downloaded >= args.per_label:
                 break
+            downloaded_for_query = 0
             for page in commons_search(query, limit=args.per_query):
                 if downloaded >= args.per_label:
+                    break
+                if downloaded_for_query >= args.max_per_query:
                     break
                 imageinfo = (page.get("imageinfo") or [{}])[0]
                 source_url = imageinfo.get("thumburl") or imageinfo.get("url")
                 if not source_url or source_url in seen_urls:
                     continue
+                title = page.get("title", "").replace("File:", "")
+                if should_skip_page(label, title):
+                    continue
                 extmetadata = imageinfo.get("extmetadata") or {}
                 license_short = extmetadata.get("LicenseShortName", {}).get("value", "")
                 creator = extmetadata.get("Artist", {}).get("value", "")
-                title = page.get("title", "").replace("File:", "")
                 digest = hashlib.sha1(source_url.encode("utf-8")).hexdigest()[:10]
                 filename = f"{label}_{downloaded + 1:02d}_{digest}{extension_from_url(source_url)}"
                 destination = label_dir / filename
@@ -109,6 +141,7 @@ def main() -> None:
                 )
                 seen_urls.add(source_url)
                 downloaded += 1
+                downloaded_for_query += 1
 
     MANIFEST_JSONL.write_text(
         "\n".join(json.dumps(record, ensure_ascii=False) for record in manifest_records) + "\n",

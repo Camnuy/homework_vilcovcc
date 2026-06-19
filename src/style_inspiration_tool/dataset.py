@@ -7,6 +7,8 @@ import pandas as pd
 
 from .config import IMAGE_ROOT, PROJECT_ROOT, SPLIT_CSV, STYLE_LABELS
 
+IGNORED_IMAGE_TOKENS = ("_generated_",)
+
 
 def scan_dataset(image_root: Path = IMAGE_ROOT) -> pd.DataFrame:
     records: list[dict[str, str]] = []
@@ -16,6 +18,8 @@ def scan_dataset(image_root: Path = IMAGE_ROOT) -> pd.DataFrame:
             continue
         for path in sorted(class_dir.glob("*")):
             if path.suffix.lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
+                continue
+            if any(token in path.name.lower() for token in IGNORED_IMAGE_TOKENS):
                 continue
             records.append(
                 {

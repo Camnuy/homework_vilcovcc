@@ -9,13 +9,13 @@ Visual Style Classification and Creative Judgement Analysis Tool
 
 这是一个围绕“机器如何判断视觉风格”的课程项目。
 
-用户可以上传一张图像，系统会：
+用户可以选择一张本地图像，系统会：
 
 1. 判断它更接近哪一种视觉风格类别
 2. 给出对应的置信度
-3. 辅助展示相近参考图
+3. 展示相近参考图作为辅助解释
 
-这个项目的重点不是推荐参考图，而是**分析机器如何进行审美判断**。
+这个项目的重点不是做图像检索，而是**分析机器如何进行审美判断**。
 
 ## 当前版本的核心思路
 
@@ -41,7 +41,7 @@ Visual Style Classification and Creative Judgement Analysis Tool
 
 当前初版已经可以展示：
 
-1. 上传图像后的风格预测
+1. 本地图像的风格预测
 2. 分类置信度
 3. 测试集评估结果
 4. 混淆矩阵与误判分析思路
@@ -50,7 +50,7 @@ Visual Style Classification and Creative Judgement Analysis Tool
 
 当前 starter 版本已有一轮基础评估结果：
 
-- Accuracy: `0.800`
+- Accuracy: `0.857`
 
 这个结果足以支撑一个初版课程项目，同时也保留了后续反思空间。
 
@@ -60,7 +60,7 @@ Visual Style Classification and Creative Judgement Analysis Tool
 
 1. 明确的机器学习任务
 2. 和 creative practice 相关的批判性问题
-3. 可运行 demo
+3. 可运行的本地 demo
 4. 可写 README、weblog 和视频展示
 5. 对主观审美分类的反思空间
 
